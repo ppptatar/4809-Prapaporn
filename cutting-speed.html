@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutting Speed Calculator</title>
+    <!-- Speed Rate -->
+    <style>
+        .speedRate{
+            width: 250px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: paleturquoise;
+            padding: 15px;
+            padding-left: 30px;
+            margin: 40px;
+            font-family: monospace;
+        }
+        .speedRate h4{
+            text-align: center;
+            font-size: larger;
+        }
+        .speedRate input{
+            background-color: palegreen;
+        }
+        .speedRate button{
+            background-color: palevioletred;
+        }
+    </style>
+    <!-- Feed Rate -->
+    <style>
+        .feedRate{
+            width: 250px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: paleturquoise;
+            padding: 15px;
+            padding-left: 30px;
+            margin: 40px;
+            font-family: monospace;
+        }
+        .feedRate h4{
+            text-align: center;
+            font-size: larger;
+        }
+        .feedRate input{
+            background-color: palegreen;
+        }
+        .feedRate button{
+            background-color: palevioletred;
+        }
+    </style>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+    <style>
+            .head {
+            background-color: turquoise;
+            text-align: center;
+            padding: 70px;
+            }
+            .head h1 {
+                color: tomato;
+                font-family: monospace;
+            }
+            .head p {
+                color: yellow;
+                font-size: 25px;
+                font-family: monospace;
+            }
+            .menu {
+                background-color: violet;
+                overflow: hidden;
+                font-family: monospace;
+            }
+            .menu a {
+                display: block;
+                float: left;
+                padding: 10px 20px;
+                text-decoration: none;
+                transition: all 0.5s ease;
+            }
+            .menu a:hover {
+                background-color: yellowgreen;
+            }
+            body {
+                margin: 0;
+                background-color: peachpuff;
+            }
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            li{
+                margin: 20px;
+                text-align: center;
+                list-style: none;
+            }
+            h2,h3{
+                font-family: monospace;
+                font-size: x-large;
+                color: salmon;
+            }
+    </style>
+    </head>
+    <body>
+        <div class="head">
+            <h1>APE 100 Website</h1>
+            <p>Created By Prapaporn Masuan</p>
+        </div>
+        <div class="menu">
+            <a href="cutting-speed.html">Cutting Speed Calculator</a>
+            <a href="Geometric Area.html">Geometric Calculator</a>
+            <a href="calculator.html">Basic Calculator</a>
+            <a href="index.html" target="_blank">Index</a>
+        </div>
+    <script>
+        function speedRate() {
+            let n = parseFloat(document.getElementById("spin").value);
+            let D = parseFloat(document.getElementById("cutter").value);
+            let res = (3.14*n*D)/1000;
+            document.getElementById("speed").value = res.toFixed(2);
+        }
+    </script>
+    <script>
+        function feedRate() {
+            let f = parseFloat(document.getElementById("fpt").value);
+            let Z = parseFloat(document.getElementById("nof").value);
+            let n = parseFloat(document.getElementById("spindle").value);
+            let res = (f*Z*n);
+            document.getElementById("feed").value = res.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Speed Rate -->
+        <div class="speedRate">
+            <h4>Speed Rate</h4>
+            <label for="" >Spindle Speed (n) (min<sup>-1</sup> )</label><br>
+            <input type="text" name="" id="spin" size="10">
+            <br><br>
+            <label for="">Cutter Diameter (D) (mm)</label><br>
+            <input type="text" name="" id="cutter" size="10"> 
+            <br><br>
+            <label for="">Speed Rate (V<sub>c</sub>) (m/min)</label><br>
+            <input type="text" name="" id="speed" size="10">
+            <br><br>
+            <button onclick="speedRate()" >Enter</button>
+        </div>
+        <!-- Feed Rate -->
+        <div class="feedRate">
+            <h4>Feed Rate</h4>
+            <label for="">Feed per Tooth (f<sub>z</sub>) (mm/tooth)</label><br>
+            <input type="text" name="" id="fpt" size="10">
+            <br>
+            <label for="">Number of Flutes (Z)</label><br>
+            <input type="text" name="" id="nof" size="10"> 
+            <br>
+            <label for="">Spindle Speed (n) (min<sup>-1</sup> )</label><br>
+            <input type="text" name="" id="spindle" size="10">
+            <br>
+            <label for="">Feed Rate (mm/min)</label><br>
+            <input type="text" name="" id="feed" size="10">
+            <br>
+            <button onclick="feedRate()">Enter</button>
+        </div>
+    </div>   
+    
+</body>
+</html>

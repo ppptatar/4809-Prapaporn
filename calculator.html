@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculatort</title>
+    
+    <script>
+        function basicCalculation() {
+            var n1 = parseFloat(document.getElementById("num1").value);
+            var n2 = parseFloat(document.getElementById("num2").value);
+            var res ;
+            var operation = document.getElementById("operator").value;
+            
+            if(operation === "+"){
+                res = n1+n2;
+            }
+            if(operation === "-"){
+                res = n1-n2;
+            }
+            if(operation === "*"){
+                res = n1*n2;
+            }
+            if(operation === "/"){
+                res = n1/n2;
+            }
+            
+            document.getElementById("result").value = res.toFixed(2);
+        }
+    </script>
+    <style>
+        .calculator{
+            width: 250px;
+            height: 200px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: paleturquoise;
+            padding: 15px;
+            padding-left: 30px;
+            margin: 40px;
+            font-family: monospace;
+        }
+        .calculator h4{
+            text-align: center;
+            font-size: larger;
+        }
+        .calculator input{
+            background-color: palegreen;
+        }
+        .calculator button{
+            background-color: palevioletred;
+        }
+        .calculator select{
+            background-color: pink;
+        }
+    </style>
+    <style>
+        .tempConversion{
+            width: 250px;
+            height: 200px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: paleturquoise;
+            padding: 15px;
+            padding-left: 30px;
+            margin: 40px;
+            font-family: monospace;
+        }
+        .tempConversion h4{
+            text-align: center;
+            font-size: larger;
+        }
+        .tempConversion input{
+            background-color: palegreen;
+        }
+        .tempConversion button{
+            background-color: palevioletred;
+        }
+        .tempConversion select{
+            background-color: pink;
+        }
+    </style>
+    
+    <script>
+        function c2f() {
+            let c = parseFloat(document.getElementById("cel").value);
+            let f = c*(9/5) +32;
+            document.getElementById("fah").value = f.toFixed(2);
+        }
+        function f2c() {
+            let f = parseFloat(document.getElementById("fah").value);
+            let c = (f-32)*5/9;
+            document.getElementById("cel").value = c.toFixed(2);
+        }
+    </script>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+    <style>
+        .head {
+        background-color: turquoise;
+        text-align: center;
+        padding: 70px;
+        }
+        .head h1 {
+            color: tomato;
+            font-family: monospace;
+        }
+        .head p {
+            color: yellow;
+            font-size: 25px;
+            font-family: monospace;
+        }
+        .menu {
+            background-color: violet;
+            overflow: hidden;
+            font-family: monospace;
+        }
+        .menu a {
+            display: block;
+            float: left;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+        .menu a:hover {
+            background-color: yellowgreen;
+        }
+        body {
+            margin: 0;
+            background-color: peachpuff;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        li{
+            margin: 20px;
+            text-align: center;
+            list-style: none;
+        }
+        h2,h3{
+            font-family: monospace;
+            font-size: x-large;
+            color: salmon;
+        }
+</style>
+</head>
+<body>
+    <div class="head">
+        <h1>APE 100 Website</h1>
+        <p>Created By Prapaporn Masuan</p>
+    </div>
+    <div class="menu">
+        <a href="cutting-speed.html">Cutting Speed Calculator</a>
+        <a href="Geometric Area.html">Geometric Calculator</a>
+        <a href="calculator.html">Basic Calculator</a>
+        <a href="index.html" target="_blank">Index</a>
+    </div>
+<body>
+    <div class="container">
+        <!-- Basic Calculation -->
+        <div class="calculator">
+            <h4>Basic Calculator</h4>
+            <label for="">Number1</label><br>
+            <input type="text" name="" id="num1" size="10">
+            <select name="" id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <br>
+            <label for="">Number2</label><br>
+            <input type="text" name="" id="num2" size="10"> 
+            <br>
+            <label for="">Result</label>
+            <br>
+            <input type="text" name="" id="result" size="10">
+            <button onclick="basicCalculation()">Enter</button>
+        </div>
+        <!-- Temperature Conversion -->
+        <div class="tempConversion">
+            <h4>Temperature Conversion</h4>
+            <label for="">Celcius(&#8451)</label><br>
+            <input type="text" name="" id="cel" size="10">
+            <button onclick="c2f()">C2F</button><br><br>
+            <label for="">Fahrenheit(&#8457)</label><br>
+            <input type="text" name="" id="fah" size="10">
+            <button onclick="f2c()">F2C</button>
+
+        </div>
+    </div>    
+</body>
+</html>

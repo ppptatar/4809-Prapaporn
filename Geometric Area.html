@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometric Calculator</title>
+    <style>
+
+    </style>
+    <style>
+        .triArea {
+            height: 250px;
+            width: 250px;
+            border: 10px solid #584053;
+            border-radius: 5px;
+            background-color: #8dc6bf;
+            margin: auto;
+            padding: 20px;
+            font-family: monospace;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .triArea input{
+            background-color: #fcbc66;
+        }
+        .triArea h4{
+            background-color: #ece6cd;
+        }
+        .recArea {
+            height: 250px;
+            width: 250px;
+            border: 10px solid #584053;
+            border-radius: 5px;
+            background-color: #8dc6bf;
+            margin: auto;
+            padding: 20px;
+            font-family: monospace;
+        }
+        .recArea input{
+            background-color: #fcbc66;
+        }
+        .cirArea h4{
+            background-color: #ece6cd;
+        }.cirArea {
+            height: 250px;
+            width: 250px;
+            border: 10px solid #584053;
+            border-radius: 5px;
+            background-color: #8dc6bf;
+            margin: auto;
+            padding: 20px;
+            font-family: monospace;
+        }
+        .cirArea input{
+            background-color: #fcbc66;
+        }
+        .recArea h4{
+            background-color: #ece6cd;
+        }
+        .container{
+            margin: 40px;
+        }
+    </style>
+     <style>
+        .head {
+        background-color: turquoise;
+        text-align: center;
+        padding: 70px;
+        }
+        .head h1 {
+            color: tomato;
+            font-family: monospace;
+        }
+        .head p {
+            color: yellow;
+            font-size: 25px;
+            font-family: monospace;
+        }
+        .menu {
+            background-color: violet;
+            overflow: hidden;
+            font-family: monospace;
+        }
+        .menu a {
+            display: block;
+            float: left;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+        .menu a:hover {
+            background-color: yellowgreen;
+        }
+        body {
+            margin: 0;
+            background-color: peachpuff;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        li{
+            margin: 20px;
+            text-align: center;
+            list-style: none;
+        }
+        h2,h3{
+            font-family: monospace;
+            font-size: x-large;
+            color: salmon;
+        }
+</style>
+</head>
+<body>
+    <div class="head">
+        <h1>APE 100 Website</h1>
+        <p>Created By Prapaporn Masuan</p>
+    </div>
+    <div class="menu">
+        <a href="cutting-speed.html">Cutting Speed Calculator</a>
+        <a href="Geometric Area.html">Geometric Calculator</a>
+        <a href="calculator.html">Basic Calculator</a>
+        <a href="index.html" target="_blank">Index</a>
+    </div>
+<body style="background-color: #fbdfb6">
+    <div class="container">
+        <div class="triArea">
+            <center><h4 >Triangle Area</h4></center>
+            <img src="" alt="">
+            <hr>Base(cm) :<br>
+            <input type="text" name="" id="base" value="" size="10">
+            <br>Height(cm) :<br>
+            <input type="text" name="" id="height" value="" size="10">
+            <br>
+            <p id="result"></p>
+            <script >
+                let b = document.getElementById("base");
+                let h = document.getElementById("height");
+                let area = document.getElementById("result");
+                b.addEventListener("input", triArea);
+                h.addEventListener("input", triArea);
+                function triArea() {
+                    let base = parseFloat(b.value);
+                    let height = parseFloat(h.value);
+                    area.innerHTML = `The triangle area is ${(0.5 * base * height).toFixed(2)} (cm<sup>2</sup>)`
+                }
+            </script>
+        </div>
+        <div class="recArea">
+            <center><h4 >Rectangle Area</h4></center>
+            <img src="" alt="">
+            <hr>Width(cm) :<br>
+            <input type="text" name="" id="width" value="" size="10">
+            <br>Lenght(cm) :<br>
+            <input type="text" name="" id="lenght" value="" size="10">
+            <br>
+            <label for="">this rectangle area (cm<sup>2</sup>)</label>
+            <br>
+            <input type="text" name="" id="recArea" size="10px">
+            <button class="botton" onclick="recArea()">Enter</button>
+            <script >
+                
+            function recarea() {
+                let w = parseFloat(document.getElementById("width").value);
+                let l = parseFloat(document.getElementById("lenght").value);
+                let area = (w * l);
+                document.getElementById("recArea").value = area.toFixed(2);
+            }
+            </script>
+        </div>
+        <div class="cirArea">
+            <center><h4 >Circle Area (cm)</h4></center>
+            <img src="" alt="">
+            <hr>Radius:<br>
+            <input type="text" name="" id="radius" value="" size="10">
+            <br>
+            <label for="">this circle area (cm<sup>2</sup>)</label>
+            <br>
+            <input type="text" name="" id="cirArea" size="10px">
+            <button class="botton" onclick="cirArea()">Enter</button>
+            <script >
+                
+            function cirArea() {
+                let r = parseFloat(document.getElementById("radius").value);
+                let area = (3.14 * r * r);
+                document.getElementById("cirArea").value = area.toFixed(2);
+            }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
